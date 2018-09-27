@@ -2,6 +2,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <div class="col-md-3 left_col" th:fragment="menu">
+    <!--注销用户-->
+    <form th:action="@{/logout}" method="post" id="logoutForm" style="display: none"></form>
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
             <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
