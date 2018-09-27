@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-<head th:replace="common/head :: head('列表展示demo','')">
+<head th:replace="common/head :: head('列表展示demo','/assets/jqgrid/css/ui.jqgrid.css，/assets/jqgrid/css/myjqGrid.css')">
 </head>
 
 <body class="nav-md">
@@ -37,6 +37,12 @@
                     <div class="x_content">
 
                         <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
+
+                        <div class="list_jqgrid ">
+                            <table id="demo_table" class="scroll" cellpadding="0" cellspacing="0"></table>
+                            <div id="demo_pager" class="scroll"></div>
+                        </div>
+
 
                         <div class="table-responsive">
                             <table class="table table-striped jambo_table bulk_action">
@@ -208,7 +214,7 @@
         <footer th:replace="~{common/foot :: foot}"></footer>
     </div>
 </div>
-<div th:replace="common/jsdiv :: js('/assets/js/demo.js')">
+<div th:replace="common/jsdiv :: js('/assets/jqgrid/js/jquery.jqGrid.src.js,/assets/jqgrid/js/i18n/grid.locale-cn.js,/assets/js/table.js')">
 </div>
 </body>
 </html>
