@@ -4,6 +4,8 @@ import com.tyf.springbootdemo.code.dao.RoleRepository;
 import com.tyf.springbootdemo.code.dao.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -13,6 +15,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class SpringbootdemoApplicationTests {
 
+    private final static Logger logger = LoggerFactory.getLogger(SpringbootdemoApplicationTests.class);
+
     @Autowired
     private RoleRepository roleRepository;
     @Autowired
@@ -21,15 +25,9 @@ public class SpringbootdemoApplicationTests {
     @Test
     public void contextLoads() {
 
-        /*List<Role> roles = roleRepository.findByUserId(2);
+        logger.info("一共有"+userRepository.count()+"个用户");
 
-        System.out.print(roles.size());*/
 
-        String pwd = "123456";
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        // 加密
-        String encodedPassword = passwordEncoder.encode(pwd);
-        System.out.println("【加密后的密码为：】" + encodedPassword);
 
 
     }

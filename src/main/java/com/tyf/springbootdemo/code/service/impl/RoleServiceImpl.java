@@ -28,7 +28,6 @@ public class RoleServiceImpl implements RoleService {
             List<Menu> menus = menuRepository.findByRoleId(role.getId());
             role.setMenus(menus);
             allRoles.add(role);
-
         });
         return allRoles;
     }
