@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class LoginController {
     private final static Logger logger = LoggerFactory.getLogger(LoginController.class);
 
-    @RequestMapping(value = "/",method = RequestMethod.GET)
+    @RequestMapping(value ={"/index","/"},method = RequestMethod.GET)
     public String showHome(Model model) {
-        String name = SecurityContextHolder.getContext().getAuthentication().getName();
+        /*String name = SecurityContextHolder.getContext().getAuthentication().getName();
 
         logger.info("当前登陆用户：" + name);
-        model.addAttribute("name",name);
+        model.addAttribute("name",name);*/
         return "index";
     }
 
