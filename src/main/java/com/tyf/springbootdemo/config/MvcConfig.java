@@ -5,8 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.*;
 
-import javax.annotation.Resource;
-
 @Configuration
 @EnableWebMvc
 public class MvcConfig implements WebMvcConfigurer {
@@ -33,7 +31,6 @@ public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/login").setViewName("login");
-
     }
 
     @Override

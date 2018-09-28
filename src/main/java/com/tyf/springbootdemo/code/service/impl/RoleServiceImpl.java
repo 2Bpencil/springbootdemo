@@ -24,7 +24,6 @@ public class RoleServiceImpl implements RoleService {
         List<Role> allRoles = new ArrayList<>();
         List<Role> roles = roleRepository.findAll();
         roles.forEach(role -> {
-
             List<Menu> menus = menuRepository.findByRoleId(role.getId());
             role.setMenus(menus);
             allRoles.add(role);
