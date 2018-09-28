@@ -57,6 +57,7 @@ public class SysInvocationSecurityMetadataSource implements FilterInvocationSecu
         HttpServletRequest request = ((FilterInvocation) object).getHttpRequest();
         AntPathRequestMatcher matcher;
         String resUrl;
+
         for(Iterator<String> iter = map.keySet().iterator(); iter.hasNext(); ) {
             resUrl = iter.next();
             matcher = new AntPathRequestMatcher(resUrl);

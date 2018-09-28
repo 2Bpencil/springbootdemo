@@ -2,6 +2,7 @@ package com.tyf.springbootdemo;
 
 import com.tyf.springbootdemo.code.dao.RoleRepository;
 import com.tyf.springbootdemo.code.dao.UserRepository;
+import com.tyf.springbootdemo.code.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -27,8 +28,10 @@ public class SpringbootdemoApplicationTests {
 
         logger.info("一共有"+userRepository.count()+"个用户");
 
-
-
+        User user = new User();
+        user.setUsername("admin");
+        user.setPassword("789456");
+        System.out.println(user.getPassword());
 
     }
 

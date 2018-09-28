@@ -30,7 +30,6 @@ public class RoleServiceImpl implements RoleService {
         });
         return allRoles;
     }
-
     @Override
     public List<Role> findByMenuId(Integer id) {
         return roleRepository.findByMenuId(id);

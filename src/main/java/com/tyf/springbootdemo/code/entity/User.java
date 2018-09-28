@@ -3,6 +3,7 @@ package com.tyf.springbootdemo.code.entity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -51,7 +52,9 @@ public class User implements UserDetails {
     public void setUsername(String username) {
         this.username = username;
     }
-    public void setPassword(String password) {
+    public void setPassword(String password) {//加密
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        password = passwordEncoder.encode(password);//加密
         this.password = password;
     }
 
