@@ -27,6 +27,8 @@
 
     <script th:src="@{/assets/js/jquery.uniform.min.js}" type="text/javascript" ></script>
 
+    <script  th:src="@{/assets/js/logout.js}"></script>
+
     <script  th:src="@{/assets/js/app.js}"></script>
     <!--页面js-->
     <script th:each="jsPath,status:${#strings.setSplit(jsPaths,',')}" th:src="@{${jsPath}}"></script>

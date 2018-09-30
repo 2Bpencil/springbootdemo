@@ -61,7 +61,7 @@ var Login = function () {
 	            }
 	        });
 
-	        $('.forget-form').validate({
+	        /*$('.forget-form').validate({
 	            errorElement: 'label', //default input error message container
 	            errorClass: 'help-inline', // default input error message class
 	            focusInvalid: false, // do not focus the last invalid input
@@ -100,18 +100,18 @@ var Login = function () {
 	            submitHandler: function (form) {
 	                window.location.href = "index.html";
 	            }
-	        });
+	        });*/
 
-	        $('.forget-form input').keypress(function (e) {
+	        /*$('.forget-form input').keypress(function (e) {
 	            if (e.which == 13) {
 	                if ($('.forget-form').validate().form()) {
 	                    window.location.href = "index.html";
 	                }
 	                return false;
 	            }
-	        });
+	        });*/
 
-	        jQuery('#forget-password').click(function () {
+	        /*jQuery('#forget-password').click(function () {
 	            jQuery('.login-form').hide();
 	            jQuery('.forget-form').show();
 	        });
@@ -119,9 +119,9 @@ var Login = function () {
 	        jQuery('#back-btn').click(function () {
 	            jQuery('.login-form').show();
 	            jQuery('.forget-form').hide();
-	        });
+	        });*/
 
-	        $('.register-form').validate({
+	        /*$('.register-form').validate({
 	            errorElement: 'label', //default input error message container
 	            errorClass: 'help-inline', // default input error message class
 	            focusInvalid: false, // do not focus the last invalid input
@@ -176,9 +176,9 @@ var Login = function () {
 	            submitHandler: function (form) {
 	                window.location.href = "index.html";
 	            }
-	        });
+	        });*/
 
-	        jQuery('#register-btn').click(function () {
+	        /*jQuery('#register-btn').click(function () {
 	            jQuery('.login-form').hide();
 	            jQuery('.register-form').show();
 	        });
@@ -186,7 +186,7 @@ var Login = function () {
 	        jQuery('#register-back-btn').click(function () {
 	            jQuery('.login-form').show();
 	            jQuery('.register-form').hide();
-	        });
+	        });*/
         }
 
     };
