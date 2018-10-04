@@ -30,7 +30,7 @@ public class SpringbootdemoApplicationTests {
 
         User user = new User();
         user.setUsername("admin");
-        user.setPassword("789456");
+        user.setPassword("123456");
         System.out.println(user.getPassword());
 
     }
