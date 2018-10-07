@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+
+<!--[if !IE]><!--> <html lang="en" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
+
+<head th:replace="default/head :: head('Metronic | Table Page','/assets/css/select2_metro.css,/assets/css/DT_bootstrap.css,/assets/jqgrid/css/ui.jqgrid.css,/assets/jqgrid/css/css/cupertino/jquery-ui-1.8.16.custom.css')"></head>
+
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="page-header-fixed">
+
+<div class="header navbar navbar-inverse navbar-fixed-top">
+
+    <!-- BEGIN TOP NAVIGATION BAR -->
+
+    <div th:replace="~{default/nav :: nav}"></div>
+
+    <!-- END TOP NAVIGATION BAR -->
+
+</div>
+
+<!-- END HEADER -->
+
+<!-- BEGIN CONTAINER -->
+
+<div class="page-container row-fluid">
+
+    <!-- BEGIN SIDEBAR -->
+
+    <div th:replace="~{default/menu:: menu}"></div>
+
+    <!-- END SIDEBAR -->
+
+    <!-- BEGIN PAGE -->
+
+    <div class="page-content">
+
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <div id="portlet-config" class="modal hide">
+
+            <div class="modal-header">
+
+                <button data-dismiss="modal" class="close" type="button"></button>
+
+                <h3>portlet Settings</h3>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p>Here will be a configuration form</p>
+
+            </div>
+
+        </div>
+
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <!-- BEGIN PAGE CONTAINER-->
+
+        <div class="container-fluid">
+
+            <!-- BEGIN PAGE HEADER-->
+
+            <div class="row-fluid">
+
+                <div class="span12">
+
+                    <!-- BEGIN STYLE CUSTOMIZER -->
+
+                    <div class="color-panel hidden-phone">
+
+                        <div class="color-mode-icons icon-color"></div>
+
+                        <div class="color-mode-icons icon-color-close"></div>
+
+                        <div class="color-mode">
+
+                            <p>THEME COLOR</p>
+
+                            <ul class="inline">
+
+                                <li class="color-black current color-default" data-style="default"></li>
+
+                                <li class="color-blue" data-style="blue"></li>
+
+                                <li class="color-brown" data-style="brown"></li>
+
+                                <li class="color-purple" data-style="purple"></li>
+
+                                <li class="color-grey" data-style="grey"></li>
+
+                                <li class="color-white color-light" data-style="light"></li>
+
+                            </ul>
+
+                            <label>
+
+                                <span>Layout</span>
+
+                                <select class="layout-option m-wrap small">
+
+                                    <option value="fluid" selected>Fluid</option>
+
+                                    <option value="boxed">Boxed</option>
+
+                                </select>
+
+                            </label>
+
+                            <label>
+
+                                <span>Header</span>
+
+                                <select class="header-option m-wrap small">
+
+                                    <option value="fixed" selected>Fixed</option>
+
+                                    <option value="default">Default</option>
+
+                                </select>
+
+                            </label>
+
+                            <label>
+
+                                <span>Sidebar</span>
+
+                                <select class="sidebar-option m-wrap small">
+
+                                    <option value="fixed">Fixed</option>
+
+                                    <option value="default" selected>Default</option>
+
+                                </select>
+
+                            </label>
+
+                            <label>
+
+                                <span>Footer</span>
+
+                                <select class="footer-option m-wrap small">
+
+                                    <option value="fixed">Fixed</option>
+
+                                    <option value="default" selected>Default</option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- END BEGIN STYLE CUSTOMIZER -->
+
+                    <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+                    <h3 class="page-title">
+
+                        Blank Page <small>blank page</small>
+
+                    </h3>
+
+                    <ul class="breadcrumb">
+
+                        <li>
+
+                            <i class="icon-home"></i>
+
+                            <a href="index.html">Home</a>
+
+                            <i class="icon-angle-right"></i>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">Layouts</a>
+
+                            <i class="icon-angle-right"></i>
+
+                        </li>
+
+                        <li><a href="#">Blank Page</a></li>
+
+                    </ul>
+
+                    <!-- END PAGE TITLE & BREADCRUMB-->
+
+                </div>
+
+            </div>
+
+            <!-- END PAGE HEADER-->
+
+            <!-- BEGIN PAGE CONTENT-->
+            <div class="container-fluid">
+
+                <div class="row-fluid">
+
+                    <div class="span12">
+
+                        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+                        <div class="portlet box light-grey">
+
+                            <div class="portlet-title">
+
+                                <div class="caption"><i class="icon-globe"></i>Managed Table</div>
+
+                                <div class="tools">
+
+                                    <a href="javascript:;" class="collapse"></a>
+
+                                    <a href="#portlet-config" data-toggle="modal" class="config"></a>
+
+                                    <a href="javascript:;" class="reload"></a>
+
+                                    <a href="javascript:;" class="remove"></a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="portlet-body">
+
+                                <div class="clearfix">
+
+                                    <div class="btn-group">
+
+                                        <button id="sample_editable_1_new" class="btn green">
+
+                                            Add New <i class="icon-plus"></i>
+
+                                        </button>
+
+                                    </div>
+
+                                    <div class="btn-group pull-right">
+
+                                        <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="icon-angle-down"></i>
+
+                                        </button>
+
+                                        <ul class="dropdown-menu pull-right">
+
+                                            <li><a href="#">Print</a></li>
+
+                                            <li><a href="#">Save as PDF</a></li>
+
+                                            <li><a href="#">Export to Excel</a></li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                                <table class="table table-striped table-bordered table-hover" id="dataTable"></table>
+                                <div id = "dataPage"></div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- END EXAMPLE TABLE PORTLET-->
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+            <!-- END PAGE CONTENT-->
+
+        </div>
+
+        <!-- END PAGE CONTAINER-->
+
+    </div>
+
+    <!-- END PAGE -->
+
+</div>
+<!-- BEGIN FOOT -->
+<div th:replace="~{default/foot :: foot}"></div>
+<!-- END FOOT -->
+
+<!-- BEGIN JAVASCRIPTS -->
+<div th:replace="default/commonjs :: js('/assets/js/select2.min.js,'+
+                                    '/assets/js/jquery.dataTables.js,'+
+                                    '/assets/js/DT_bootstrap.js,'+
+                                    '/assets/js/table-managed.js,'+
+                                    '/assets/jqgrid/js/jquery.jqGrid.src.js,'+
+                                    '/assets/function/tabledemo.js')"></div>
+
+<script>
+
+    jQuery(document).ready(function() {
+
+        App.init();
+
+
+    });
+
+</script>
+<!-- END JAVASCRIPTS -->
+</body>
+</html>

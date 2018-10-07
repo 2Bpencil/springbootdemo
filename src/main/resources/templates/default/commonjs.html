@@ -30,6 +30,15 @@
     <script  th:src="@{/assets/js/logout.js}"></script>
 
     <script  th:src="@{/assets/js/app.js}"></script>
+
+    <!--getScheme()获取协议，getServerName()获取服务器名，getServerPort()服务器端口，getContextPath() APP根路径-->
+    <a th:href="${#httpServletRequest.getScheme() + '://' + #httpServletRequest.getServerName() + ':' + #request.getServerPort()  + #request.getContextPath() + '/'} "
+       id="contextPath" style="display: none"></a>
+    <script>
+        /*获取应用的根目录，我的绝对路径是*/
+        var contextPath = $('#contextPath').attr('href');
+
+    </script>
     <!--页面js-->
     <script th:each="jsPath,status:${#strings.setSplit(jsPaths,',')}" th:src="@{${jsPath}}"></script>
 
