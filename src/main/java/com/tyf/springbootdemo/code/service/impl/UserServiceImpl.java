@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService,UserDetailsService {
             user.setRoles(roles);
             List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
             for (Role role : roles) {
-                GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role.getName());
+                GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role.getAuthority());
                 //1：此处将权限信息添加到 GrantedAuthority 对象中，在后面进行全权限验证时会使用GrantedAuthority 对象。
                 grantedAuthorities.add(grantedAuthority);
             }

@@ -37,7 +37,7 @@ public class SysInvocationSecurityMetadataSource implements FilterInvocationSecu
             array = new ArrayList<>();
             List<Role> roles = roleService.findByMenuId(menu.getId());
             for (Role role:roles ) {
-                cfg = new SecurityConfig(role.getName());
+                cfg = new SecurityConfig(role.getAuthority());
                 //此处只添加了用户的名字，其实还可以添加更多权限的信息，例如请求方法到ConfigAttribute的集合中去。此处添加的信息将会作为MyAccessDecisionManager类的decide的第三个参数。
                 array.add(cfg);
             }
@@ -65,8 +65,6 @@ public class SysInvocationSecurityMetadataSource implements FilterInvocationSecu
                 return map.get(resUrl);
             }
         }
-
-
         return null;
     }
 

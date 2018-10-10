@@ -36,7 +36,7 @@ public class User implements UserDetails {
         List<GrantedAuthority> auths = new ArrayList<>();
         List<Role> roles = this.getRoles();
         for (Role role : roles) {
-            auths.add(new SimpleGrantedAuthority(role.getName()));
+            auths.add(new SimpleGrantedAuthority(role.getAuthority()));
         }
         return auths;
     }
