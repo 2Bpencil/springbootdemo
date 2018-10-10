@@ -17,10 +17,14 @@ import org.springframework.security.web.access.intercept.FilterSecurityIntercept
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
+
+
     @Autowired
     private UserServiceImpl userService;
     @Autowired
     private SysFilterSecurityInterceptor sysFilterSecurityInterceptor;
+    @Autowired
+    private SysAuthenticationSuccessHandler successHandler;
 
 
     @Override
@@ -30,10 +34,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
+                .permitAll()
+                .loginProcessingUrl("/login")
+                .successHandler(successHandler)
                 .failureUrl("/login?error")
                 .permitAll() //登录页面用户任意访问
                 .and()
-                .logout().permitAll(); //注销行为任意访问
+                .logout().permitAll()
+                .and()
+                .exceptionHandling().accessDeniedPage("/accessDenied"); //注销行为任意访问
         http.addFilterBefore(sysFilterSecurityInterceptor, FilterSecurityInterceptor.class);
 
     }

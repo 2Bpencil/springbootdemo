@@ -72,11 +72,11 @@
 
 			<h3 class="form-title">Login to your account</h3>
 
-			<div class="alert alert-error hide">
+			<div class="alert alert-error " th:if="${param.error != null}" >
 
 				<button class="close" data-dismiss="alert"></button>
 
-				<span>Enter any username and password.</span>
+				<span>用户名或密码错误，请重试！</span>
 
 			</div>
 
@@ -122,7 +122,7 @@
 
 				<label class="checkbox">
 
-				<input type="checkbox" name="remember" value="1"/> Remember me
+				<input type="checkbox" name="remember-me" /> Remember me
 
 				</label>
 
@@ -135,7 +135,8 @@
 
 			</div>
 
-			<div class="forget-password">
+			<div class="forget-password ">
+
 
 				<h4>Forgot your password ?</h4>
 

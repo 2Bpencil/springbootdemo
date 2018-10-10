@@ -14,10 +14,10 @@ public class LoginController {
 
     @RequestMapping(value ={"/index","/"},method = RequestMethod.GET)
     public String showHome(Model model) {
-        /*String name = SecurityContextHolder.getContext().getAuthentication().getName();
+        String name = SecurityContextHolder.getContext().getAuthentication().getName();
 
         logger.info("当前登陆用户：" + name);
-        model.addAttribute("name",name);*/
+        model.addAttribute("username",name);
         return "index";
     }
 
