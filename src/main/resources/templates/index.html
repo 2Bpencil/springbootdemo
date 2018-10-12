@@ -217,7 +217,12 @@
                     <sec:authorize access="hasRole('ROLE_ADMIN')">
                         <h1>管理员你好！</h1>
                     </sec:authorize>
-
+                    <sec:authorize access="hasRole('ROLE_USER')">
+                        <h1>普通用户你好！</h1>
+                    </sec:authorize>
+                    <sec:authorize access="hasRole('ROLE_TEST')">
+                        <h1>测试你好！</h1>
+                    </sec:authorize>
 
                 </div>
 

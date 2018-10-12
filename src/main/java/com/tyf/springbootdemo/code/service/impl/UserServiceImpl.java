@@ -29,6 +29,7 @@ public class UserServiceImpl implements UserService,UserDetailsService {
         User user = userRepository.findByUsername(name);
         if (user != null) {
             List<Role> roles = roleRepository.findByUserId(user.getId());
+            System.out.println(roles.size());
             user.setRoles(roles);
             List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
             for (Role role : roles) {
