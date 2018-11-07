@@ -19,7 +19,9 @@ public class User implements UserDetails {
     private Integer id;
     @Column(length = 20)
     private String username;
-    @Column(length = 50)
+    @Column(length = 20)
+    private String nickname;
+    @Column(length = 100)
     private String password;
     @Column
     private Boolean isAccountNonExpired = true;
@@ -110,5 +112,13 @@ public class User implements UserDetails {
 
     public void setEnabled(Boolean enabled) {
         isEnabled = enabled;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 }

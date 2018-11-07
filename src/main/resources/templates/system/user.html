@@ -4,13 +4,11 @@
 
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 
-<!--[if !IE]><!--> <html lang="en" xmlns:th="http://www.thymeleaf.org"
-                         xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"> <!--<![endif]-->
+<!--[if !IE]><!--> <html lang="en" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 
 <!-- BEGIN HEAD -->
-
-<head th:replace="default/head :: head('Metronic | Index Page','')"></head>
-
+<!--/assets/css/select2_metro.css,/assets/css/DT_bootstrap.css,-->
+<head th:replace="default/head :: head('Metronic | Table Page','/assets/jqgrid/css/ui.jqgrid-bootstrap4.css')"></head>
 <!-- END HEAD -->
 
 <!-- BEGIN BODY -->
@@ -69,9 +67,13 @@
 
         <div class="container-fluid">
 
+
+
             <!-- BEGIN PAGE HEADER-->
 
             <div class="row-fluid">
+
+
 
                 <div class="span12">
 
@@ -206,20 +208,77 @@
             <!-- END PAGE HEADER-->
 
             <!-- BEGIN PAGE CONTENT-->
+            <div class="container-fluid">
 
-            <div class="row-fluid">
+                <div class="row-fluid">
 
-                <div class="span12">
+                    <div class="span12 responsive" data-tablet="span12 fix-offset" data-desktop="span12">
 
-                    Blank page content goes here
+                        <!-- BEGIN EXAMPLE TABLE PORTLET-->
 
+                        <div class="portlet box grey">
+
+                            <div class="portlet-title">
+
+                                <div class="caption"><i class="icon-user"></i>Table</div>
+
+                                <div class="actions">
+
+                                    <a href="#" class="btn blue"><i class="icon-pencil"></i> Add</a>
+                                    <a href="#" class="btn blue"><i class="icon-pencil"></i> Edit</a>
+                                    <a href="#" class="btn blue"><i class="icon-trash"></i> Delete</a>
+
+                                    <div class="btn-group">
+
+                                        <a class="btn green" href="#" data-toggle="dropdown">
+
+                                            <i class="icon-cogs"></i> Tools
+
+                                            <i class="icon-angle-down"></i>
+
+                                        </a>
+
+                                        <ul class="dropdown-menu pull-right">
+
+                                            <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+
+                                            <li><a href="#"><i class="icon-trash"></i> Delete</a></li>
+
+                                            <li><a href="#"><i class="icon-ban-circle"></i> Ban</a></li>
+
+                                            <li class="divider"></li>
+
+                                            <li><a href="#"><i class="i"></i> Make admin</a></li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="portlet-body">
+
+                                <table  id="dataTable"></table>
+                                <div id = "dataPage"></div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- END EXAMPLE TABLE PORTLET-->
+
+                    </div>
 
 
 
                 </div>
 
-            </div>
 
+
+
+            </div>
             <!-- END PAGE CONTENT-->
 
         </div>
@@ -236,12 +295,22 @@
 <!-- END FOOT -->
 
 <!-- BEGIN JAVASCRIPTS -->
-<div th:replace="default/commonjs :: js('')"></div>
+<div th:replace="default/commonjs :: js(
+                                    '/assets/jqgrid/js/i18n/grid.locale-cn.js,'+
+                                    '/assets/jqgrid/js/jquery.jqGrid.min.js,'+
+                                    '/assets/function/system/user.js')"></div>
+
 <script>
+
+    /*'/assets/js/select2.min.js,'+
+    '/assets/js/jquery.dataTables.js,'+
+    '/assets/js/DT_bootstrap.js,'+
+    '/assets/js/table-managed.js,'+*/
 
     jQuery(document).ready(function() {
 
         App.init();
+
 
     });
 

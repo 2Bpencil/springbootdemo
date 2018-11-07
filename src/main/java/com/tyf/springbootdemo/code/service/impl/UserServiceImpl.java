@@ -1,10 +1,14 @@
 package com.tyf.springbootdemo.code.service.impl;
 
+import com.tyf.springbootdemo.base.page.AbstractPagesGetter;
+import com.tyf.springbootdemo.base.page.Page;
+import com.tyf.springbootdemo.base.page.SearchFilter;
 import com.tyf.springbootdemo.code.dao.RoleRepository;
 import com.tyf.springbootdemo.code.dao.UserRepository;
 import com.tyf.springbootdemo.code.entity.Role;
 import com.tyf.springbootdemo.code.entity.User;
 import com.tyf.springbootdemo.code.service.UserService;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService,UserDetailsService {
+public class UserServiceImpl extends AbstractPagesGetter<User> implements UserService,UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
@@ -46,6 +50,14 @@ public class UserServiceImpl implements UserService,UserDetailsService {
     @Override
     public User saveEntity(User user) {
         return userRepository.save(user);
+    }
+
+
+
+
+    public String getPageJson(Page<User> pages, List<SearchFilter> filterList){
+        String sql = "SELECT * FROM user";
+        return super.getPage(pages, sql, filterList).getPageJson();
     }
 
 

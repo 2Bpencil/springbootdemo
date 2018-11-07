@@ -37,6 +37,8 @@
 
     <link rel="shortcut icon" th:href="@{/assets/image/favicon.ico}" />
 
+
+
     <link rel="stylesheet" type="text/css" th:each="cssPath,status:${#strings.setSplit(cssPaths,',')}" th:href="@{${cssPath}}"/>
 
 </head>
