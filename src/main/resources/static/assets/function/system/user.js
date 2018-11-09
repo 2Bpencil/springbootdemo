@@ -38,10 +38,10 @@ function pageInit(){
 }
 function updatePagerIcons(table) {
     var replacement = {
-        'ui-icon-seek-first' : 'iconfont icon-first',
-        'ui-icon-seek-prev' : 'iconfont icon-pre',
-        'ui-icon-seek-next' : 'iconfont icon-next',
-        'ui-icon-seek-end' : 'iconfont icon-last'
+        'ui-icon-seek-first' : 'icon-fast-backward',
+        'ui-icon-seek-prev' : 'icon-step-backward',
+        'ui-icon-seek-next' : 'icon-step-forward',
+        'ui-icon-seek-end' : 'icon-fast-forward'
     };
     $('.ui-pg-table:not(.navtable) > tbody > tr > .ui-pg-button > .ui-icon').each(function() {
         var icon = $(this);
