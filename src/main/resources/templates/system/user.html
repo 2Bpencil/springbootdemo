@@ -216,7 +216,7 @@
 
                         <!-- BEGIN EXAMPLE TABLE PORTLET-->
 
-                        <div class="portlet box blue">
+                        <div class="portlet box blue" >
 
                             <div class="portlet-title">
 
@@ -224,10 +224,15 @@
 
                                 <div class="actions">
 
-                                    <a href="#" class="btn green"><i class="icon-pencil"></i> Add</a>
+                                    <a href="#" class="btn green" onclick="test()"><i class="icon-pencil"></i> Add</a>
                                     <a href="#" class="btn green"><i class="icon-pencil"></i> Edit</a>
                                     <a href="#" class="btn green"><i class="icon-trash"></i> Delete</a>
                                     <a href="#" class="btn green"><i class="icon-repeat"></i> Refresh</a>
+
+                                </div>
+                                <div class="tools">
+
+                                    <a href="javascript:;" class="collapse" id="table_collapse"></a>
 
                                 </div>
 
@@ -236,6 +241,7 @@
                             <div class="portlet-body">
 
                                 <table  id="dataTable"></table>
+
                                 <div id = "dataPage"></div>
 
                             </div>

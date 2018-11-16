@@ -1,27 +1,28 @@
 
 
 $(function (){
-
     pageInit();
+    var newHeight = $(window).height()*0.6;
+    $(".ui-jqgrid .ui-jqgrid-bdiv").css("cssText","height: "+newHeight+"px!important;");
+
 
 });
 function pageInit(){
+    $.jgrid.defaults.height = 1000;
     $.jgrid.defaults.width = 1570;
     $.jgrid.defaults.responsive = true;
     $.jgrid.defaults.styleUI = 'Bootstrap';
     //创建jqGrid组件
     $("#dataTable").jqGrid({
-        url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
+        url: contextPath + 'user/getPages',
         mtype: "GET",
         styleUI : 'Bootstrap',
         multiselect: true,//复选框
-        datatype: "jsonp",
+        datatype: "json",
         colModel: [
-            { label: 'OrderID', name: 'OrderID', key: true, width: 75 },
-            { label: 'Customer ID', name: 'CustomerID', width: 150 },
-            { label: 'Order Date', name: 'OrderDate', width: 150 },
-            { label: 'Freight', name: 'Freight', width: 150 },
-            { label:'Ship Name', name: 'ShipName', width: 150 }
+            { label: 'id', name: 'id', hidden: true, width: 75 },
+            { label: '用户名', name: 'username', width: 150 },
+            { label: '昵称', name: 'nickname', width: 150 },
         ],
         viewrecords: true,
         loadComplete : function() {
@@ -31,9 +32,15 @@ function pageInit(){
             }, 0);
         },
         height: 250,
-        rowNum: 10,
-        rowList : [10,20,30],
-        pager: "#dataPage"
+        rowNum: 15,
+        rowList : [15,20,25],
+        pager: "#dataPage",
+        sortable : true,
+        sortname : 'id',
+        sortorder : 'desc',
+        pagerpos : 'right',
+        recordpos : 'left',
+        autowidth : true
     });
 }
 function updatePagerIcons(table) {
@@ -49,4 +56,8 @@ function updatePagerIcons(table) {
         if ($class in replacement)
             icon.attr('class', 'ui-icon ' + replacement[$class]);
     });
+}
+
+function  test(){
+    alert(22222);
 }

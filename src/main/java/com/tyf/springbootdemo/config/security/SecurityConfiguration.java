@@ -26,7 +26,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private SysAuthenticationSuccessHandler successHandler;
 
-
+    /**
+     *
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
@@ -36,7 +40,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .permitAll()
                 .loginProcessingUrl("/login")
-                .successHandler(successHandler)
+                .successHandler(successHandler)//登陆成功后，执行的操作
                 .failureUrl("/login?error")
                 .permitAll() //登录页面用户任意访问
                 .and()
@@ -47,18 +51,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     }
 
-
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-
+    /**
+     * 用于创建用户和角色
+     * @param auth
+     * @throws Exception
+     */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
     }
-
+    
     @Override
         public void configure(WebSecurity web) throws Exception {
         // 设置拦截忽略文件夹，可以对静态资源放行

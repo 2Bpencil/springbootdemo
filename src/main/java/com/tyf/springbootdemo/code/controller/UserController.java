@@ -26,7 +26,7 @@ public class UserController {
         return "system/user";
     }
 
-    @RequestMapping(value = "getPages",method = RequestMethod.POST)
+    @RequestMapping(value = "getPages",method = RequestMethod.GET)
     public void getPageJson(Page<User> pages, HttpServletRequest request, HttpServletResponse response){
         List<SearchFilter> filterlist = SearchUtils.getParametersStartingWith(request, "search");
         String json = userService.getPageJson(pages,filterlist);
