@@ -4,14 +4,12 @@ import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 /**
  * @Auther: tyf
  * @Date: 2018/11/26 15:59
  * @Description:
  */
-@Component
 public class QuartzManager {
 
     private final static Logger logger = LoggerFactory.getLogger(QuartzManager.class);
@@ -36,7 +34,7 @@ public class QuartzManager {
             TriggerBuilder<Trigger> triggerBuilder = TriggerBuilder.newTrigger();
             // 触发器名,触发器组
             triggerBuilder.withIdentity(jobId, triggerGroup).startNow().startNow()
-                    .withSchedule(CronScheduleBuilder.cronSchedule(""));
+                    .withSchedule(CronScheduleBuilder.cronSchedule(cron));
             // 创建Trigger对象
             CronTrigger trigger = (CronTrigger) triggerBuilder.build();
 

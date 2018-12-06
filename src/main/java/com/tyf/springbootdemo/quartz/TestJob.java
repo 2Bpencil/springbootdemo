@@ -4,6 +4,8 @@ import org.quartz.Job;
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @Auther: tyf
@@ -11,6 +13,7 @@ import org.quartz.JobExecutionException;
  * @Description:
  */
 public class TestJob implements Job {
+    private final static Logger logger = LoggerFactory.getLogger(TestJob.class);
 
     public final static String JOB_GROUP = "test";
 
@@ -19,6 +22,6 @@ public class TestJob implements Job {
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
         JobDataMap dataMap = context.getJobDetail().getJobDataMap();
-        System.out.println("  定时任务!  "+System.currentTimeMillis());
+        logger.info(dataMap.getString("name"));
     }
 }
