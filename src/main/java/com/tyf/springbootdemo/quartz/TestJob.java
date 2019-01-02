@@ -22,6 +22,8 @@ public class TestJob implements Job {
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
         JobDataMap dataMap = context.getJobDetail().getJobDataMap();
-        logger.info(dataMap.getString("name"));
+        Thread th=Thread.currentThread();
+
+        logger.info(dataMap.getString("name")+"-----我的线程id:"+th.getId());
     }
 }

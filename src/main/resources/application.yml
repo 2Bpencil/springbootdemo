@@ -52,10 +52,21 @@ spring:
       prefix: classpath:/templates/
       #在构建URL时添加到视图名称后的后缀（默认值：.html）
       suffix: .html
+#******************************************应用监控配置*****************************************
+management:
+  server:
+    port: 8084
+    ssl:
+      enabled: false
 #******************************************日志配置*****************************************
 #logging:
 # config: classpath:logback-spring.xml
 # path: F:/log
+
+
+
+
+
 
 
 
