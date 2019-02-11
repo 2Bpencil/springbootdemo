@@ -29,6 +29,6 @@ public class StartQuartzTask implements ApplicationRunner {
             dataMap.put("name","我是定时任务"+i+"！");
             QuartzManager.addJob(i+"",TestJob.JOB_GROUP,TestJob.TRIGGER_GROUP,"*/5 * * * * ?",TestJob.class,dataMap);
         }
-        logger.info("-------------》》》》》加载定时任务");
+        logger.info("-------------》》》》》加载定时任务   2");
     }
 }

@@ -29,6 +29,6 @@ public class StartService implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        logger.info("------》》》》》启动任务已开启");
+        logger.info("------》》》》》启动任务已开启    1");
     }
 }
