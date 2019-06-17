@@ -48,20 +48,20 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
-	                window.location.href = "index.html";
+                    $('.login-form').submit();
 	            }
 	        });
 
 	        $('.login-form input').keypress(function (e) {
 	            if (e.which == 13) {
-	                if ($('.login-form').validate().form()) {
-	                    window.location.href = "index.html";
-	                }
+                    if ($('.login-form').validate().form()) {
+                        $('.login-form').submit();
+                    }
 	                return false;
 	            }
 	        });
 
-	        $('.forget-form').validate({
+	        /*$('.forget-form').validate({
 	            errorElement: 'label', //default input error message container
 	            errorClass: 'help-inline', // default input error message class
 	            focusInvalid: false, // do not focus the last invalid input
@@ -186,13 +186,13 @@ var Login = function () {
 	        jQuery('#register-back-btn').click(function () {
 	            jQuery('.login-form').show();
 	            jQuery('.register-form').hide();
-	        });
+	        });*/
 
 	        $.backstretch([
-		        "media/image/bg/1.jpg",
-		        "media/image/bg/2.jpg",
-		        "media/image/bg/3.jpg",
-		        "media/image/bg/4.jpg"
+		        "assets/image/bg/1.jpg",
+		        "assets/image/bg/2.jpg",
+		        "assets/image/bg/3.jpg",
+		        "assets/image/bg/4.jpg"
 		        ], {
 		          fade: 1000,
 		          duration: 8000

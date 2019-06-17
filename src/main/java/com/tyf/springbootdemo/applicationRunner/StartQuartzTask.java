@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
  * @Date: 2018/12/6 17:22
  * @Description:  项目启动时 加载定时任务
  */
-@Component
-@Order(value = 2)
+//@Component
+//@Order(value = 2)
 public class StartQuartzTask implements ApplicationRunner {
 
     private final static Logger logger = LoggerFactory.getLogger(StartQuartzTask.class);
