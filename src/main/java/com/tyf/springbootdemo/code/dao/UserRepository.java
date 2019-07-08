@@ -9,4 +9,7 @@ public interface UserRepository extends ExpandJpaRepository<User,Integer> {
 
     User findByUsername(String name);
 
+
+
+
 }

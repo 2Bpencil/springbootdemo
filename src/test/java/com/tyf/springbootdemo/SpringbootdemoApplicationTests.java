@@ -36,16 +36,9 @@ public class SpringbootdemoApplicationTests {
     @Test
     public void contextLoads() {
 
-        logger.info("一共有"+userRepository.count()+"个用户");
+        String nickName = userRepository.findByUsername("tyf").getNickname();
 
-//        User user = new User();
-//        user.setUsername("admin");
-//        user.setPassword("123456");
-//        System.out.println(user.getPassword());
-        Page<User> pages = new Page<>();
-        System.out.println(userService.getPageJson(pages,null));
-
-
+        System.out.println(nickName);
     }
 
 }

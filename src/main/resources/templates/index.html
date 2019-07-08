@@ -53,6 +53,7 @@
 
                 <h3>portlet Settings</h3>
 
+
             </div>
 
             <div class="modal-body">
@@ -212,6 +213,10 @@
                 <div class="span12">
 
                     Blank page content goes here
+                    <h3 data-sec-authorize="hasRole('ROLE_ADMIN')">
+                        这部分内容当用户角色为为ADMIN时显示
+                    </h3>
+                    <p> 登录用户为：<span sec:authentication="name"></span></p>
 
 
 

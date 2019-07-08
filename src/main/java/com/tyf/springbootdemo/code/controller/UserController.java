@@ -28,6 +28,7 @@ public class UserController {
 
     @RequestMapping(value = "getPages",method = RequestMethod.GET)
     public void getPageJson(Page<User> pages, HttpServletRequest request, HttpServletResponse response){
+        System.out.println("5555555566666655557777  ");
         List<SearchFilter> filterlist = SearchUtils.getParametersStartingWith(request, "search");
         String json = userService.getPageJson(pages,filterlist);
         try {
