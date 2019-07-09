@@ -59,9 +59,11 @@ management:
     ssl:
       enabled: false
 #******************************************日志配置*****************************************
-#logging:
-# config: classpath:logback-spring.xml
-# path: F:/log
+logging:
+  file: springboot.log
+  level.root: info
+#  level.com.tyf.springbootdemo.config: info
+
 
 
 
