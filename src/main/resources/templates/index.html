@@ -217,8 +217,13 @@
                         这部分内容当用户角色为为ADMIN时显示
                     </h3>
                     <p> 登录用户为：<span sec:authentication="name"></span></p>
+                    Roles: <span sec:authentication="principal.authorities"></span>
 
+                    <div sec:authorize-url="/demo2/hello">
+                        can see /admin
+                    </div>
 
+                    <div th:text="${session.curMenu}">[...]</div>
 
 
                 </div>
